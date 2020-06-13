@@ -1,4 +1,4 @@
-//Classe para informar o caminho do arquivo
+//Classe para busca o caminho do arquivo e realizar o salvamento das informações
 
 package selectArq;
 
@@ -22,7 +22,7 @@ public class SelectArquivo extends Dados {
 	public SelectArquivo() {
 	}
 
-	// Metodo Construtor passando parametro
+	// Metodo Construtor passando parametro o caminho que vai receber os dados do usuário
 	public SelectArquivo(String caminho) throws IOException {
 		this.caminho = caminho;
 		selecinarArquivo();

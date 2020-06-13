@@ -1,3 +1,6 @@
+//Classe principal
+//O retorono da ordenação está sendo feito pelo metodo SalvarArquivo da classe SelectArquivo como são muitas linhas para o console fica melhor visivelmente
+
 package aplicacao;
 
 import javax.swing.JOptionPane;
@@ -12,24 +15,30 @@ public class Aplicaccao {
 
 	public static void main(String[] args) throws Exception, IndexOutOfBoundsException, NumberFormatException {
 
+		//Instancia da classe SelectArquivo passando como paramentro o arquivo
 		SelectArquivo select = new SelectArquivo(JOptionPane.showInputDialog("informe o caminho do arquivo! "));
 
+		//Instancia do metodo de ordenação bubble sort
 		BubbleSort bs = new BubbleSort();
-
+		
+		//Instancia do metodo de ordenação Colletins
 		ColletionsTest cs = new ColletionsTest();
 
-		Pesquisa pesquisa = new Pesquisa();
-
+		//Instancia do metodo de ordenação InsertSort
 		InsertSort is = new InsertSort();
 
+		//Instancia do metodo de ordenação QuickSort
 		QuickSort qs = new QuickSort();
 
-		// Menu para escolher as opções
+		//Instancia da classe de pesquisa 
+		Pesquisa pesquisa = new Pesquisa();
 
+		// Menu para escolher as opções
 		int escolha;
 
 		do {
-
+			
+			
 			Object[] opcoes = { "Consultar", "Ordenar", "informações", "Sair" };
 
 			escolha = JOptionPane.showOptionDialog(null, "Importar arquivo", "escolha",
@@ -131,6 +140,7 @@ public class Aplicaccao {
 
 				break;
 
+				//Tela com o tempo de cada ordenação
 			case 2:
 
 				JOptionPane.showMessageDialog(null,
@@ -144,6 +154,7 @@ public class Aplicaccao {
 				int valida = JOptionPane.showConfirmDialog(null, "Deseja salvar as informações?", "Relatório",
 						JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 
+				//ambiente para salvar o histório em arquivo
 				if (valida != 1) {
 
 					select.SalvarArquivo("Tempo de ordenação do Bubble Sort: " + qs.retornaTempoOrdenacaoQuickSort()+" Ms"
